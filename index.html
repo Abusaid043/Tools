@@ -3,562 +3,676 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NovaTools | Zero-Gravity Interface</title>
+    <title>QuantumCompress | Next-Gen File Optimization</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Interstellar Design System */
         :root {
-            --cosmic-void: #050510;
-            --nebula-core: #7d12ff;
-            --quantum-plasma: #00f7ff;
-            --supernova: #ff2d7a;
-            --starlight: rgba(255, 255, 255, 0.92);
-            --dark-matter: rgba(5, 5, 16, 0.95);
-            --event-horizon: rgba(125, 18, 255, 0.3);
-            --singularity: 24px;
-            --warp-factor: all 0.6s cubic-bezier(0.25, 1, 0.5, 1.25);
-            --anti-gravity: 0 20px 60px rgba(0, 247, 255, 0.25);
+            --quantum-blue: #00f5ff;
+            --neon-purple: #9d00ff;
+            --cyber-pink: #ff00aa;
+            --matrix-green: #00ff88;
+            --void-black: #0a0a12;
+            --hologram-teal: #00ffcc;
+            --cyber-yellow: #ffee00;
+            --dark-space: #121220;
+            --shadow-sm: 0 1px 3px rgba(0, 245, 255, 0.2);
+            --shadow-md: 0 4px 20px rgba(157, 0, 255, 0.3);
+            --shadow-lg: 0 8px 30px rgba(255, 0, 170, 0.4);
+            --border-radius: 8px;
+            --border-radius-lg: 16px;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --glow: 0 0 15px currentColor;
         }
 
-        /* Zero-G Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        @font-face {
-            font-family: 'Cosmos';
-            src: url('https://fonts.cdnfonts.com/css/astro-space') format('woff2');
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'Quantum';
-            src: url('https://fonts.cdnfonts.com/css/quantum') format('woff2');
-            font-display: swap;
         }
 
         body {
-            font-family: 'Quantum', sans-serif;
-            background-color: var(--cosmic-void);
-            color: var(--starlight);
-            line-height: 1.8;
+            font-family: 'Rajdhani', sans-serif;
+            background-color: var(--void-black);
+            color: var(--quantum-blue);
+            line-height: 1.6;
             overflow-x: hidden;
-            background-image:
-                radial-gradient(circle at 15% 30%, var(--nebula-core) 0%, transparent 30%),
-                radial-gradient(circle at 85% 70%, var(--quantum-plasma) 0%, transparent 30%),
-                linear-gradient(to bottom, transparent 0%, var(--cosmic-void) 100%);
-            background-attachment: fixed;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(0, 245, 255, 0.03) 0%, transparent 25%),
+                radial-gradient(circle at 80% 70%, rgba(255, 0, 170, 0.03) 0%, transparent 25%);
+            min-height: 100vh;
         }
 
-        /* Wormhole Navigation */
-        .stargate {
+        /* Cyber Grid Background */
+        .cyber-grid {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            z-index: 1000;
-            padding: 20px 0;
-            background: var(--dark-matter);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--event-horizon);
-            transform: translateY(0);
-            transition: var(--warp-factor);
+            height: 100%;
+            background: 
+                linear-gradient(90deg, var(--void-black) 21px, transparent 1%) center,
+                linear-gradient(var(--void-black) 21px, transparent 1%) center,
+                var(--neon-purple);
+            background-size: 22px 22px;
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: -1;
         }
 
-        .stargate.hidden {
-            transform: translateY(-100%);
+        /* Holographic Header */
+        header {
+            background: linear-gradient(to bottom, rgba(10, 10, 18, 0.95), rgba(18, 18, 32, 0.9));
+            border-bottom: 1px solid var(--neon-purple);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-lg);
+            backdrop-filter: blur(5px);
         }
 
-        .portal {
+        .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1600px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 40px;
+            padding: 0 30px;
         }
 
-        .cosmic-logo {
-            font-family: 'Cosmos', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--quantum-plasma), var(--supernova));
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(to right, var(--quantum-blue), var(--hologram-teal));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            text-decoration: none;
-            position: relative;
-            padding: 0 10px;
+            text-shadow: 0 0 15px rgba(0, 245, 255, 0.3);
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
         }
 
-        .cosmic-logo::before {
+        .logo i {
+            margin-right: 12px;
+            color: var(--cyber-pink);
+            filter: drop-shadow(0 0 5px var(--cyber-pink));
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav ul li a {
+            color: var(--quantum-blue);
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 500;
+            letter-spacing: 1px;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: var(--cyber-pink);
+        }
+
+        nav ul li a::after {
             content: '';
             position: absolute;
-            inset: 0;
-            border: 2px solid transparent;
-            border-radius: 50px;
-            background: linear-gradient(135deg, var(--quantum-plasma), var(--supernova)) border-box;
-            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            padding: 2px;
-            pointer-events: none;
-            opacity: 0;
-            transition: var(--warp-factor);
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--cyber-pink);
+            transition: var(--transition);
         }
 
-        .cosmic-logo:hover::before {
-            opacity: 1;
-            padding: 4px;
+        nav ul li a:hover::after {
+            width: 100%;
         }
 
-        /* Quantum Buttons */
-        .quantum-btn {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 18px 42px;
-            border-radius: 50px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: var(--warp-factor);
-            overflow: hidden;
+        .mobile-menu-btn {
+            display: none;
+            background: none;
             border: none;
+            color: var(--quantum-blue);
+            font-size: 1.5rem;
             cursor: pointer;
-            z-index: 1;
-            isolation: isolate;
+            z-index: 101;
         }
 
-        .quantum-btn::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, var(--quantum-plasma), var(--supernova));
-            z-index: -2;
-        }
-
-        .quantum-btn::after {
-            content: '';
-            position: absolute;
-            inset: 2px;
-            background: var(--cosmic-void);
-            border-radius: 48px;
-            z-index: -1;
-            transition: var(--warp-factor);
-        }
-
-        .quantum-btn:hover::after {
-            background: transparent;
-            inset: 0;
-        }
-
-        .quantum-btn .btn-text {
-            background: linear-gradient(135deg, var(--quantum-plasma), var(--supernova));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            transition: var(--warp-factor);
-        }
-
-        .quantum-btn:hover .btn-text {
-            color: var(--cosmic-void);
-            background: transparent;
-            -webkit-background-clip: initial;
-            background-clip: initial;
-        }
-
-        /* Anti-Gravity Hero */
-        .quantum-hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 180px 0 100px;
+        /* Hero Section */
+        .hero {
             position: relative;
+            padding: 8rem 0 6rem;
+            text-align: center;
             overflow: hidden;
         }
 
-        .hero-content {
-            max-width: 1600px;
-            margin: 0 auto;
-            padding: 0 40px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-
-        .hero-text h1 {
-            font-family: 'Cosmos', sans-serif;
-            font-size: 5rem;
-            line-height: 1.1;
-            margin-bottom: 30px;
-            background: linear-gradient(135deg, var(--starlight), var(--quantum-plasma));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 0 0 30px rgba(0, 247, 255, 0.4);
-        }
-
-        .hero-text p {
-            font-size: 1.4rem;
-            margin-bottom: 50px;
-            color: rgba(255, 255, 255, 0.8);
-            max-width: 600px;
-            text-shadow: 0 0 10px rgba(0, 247, 255, 0.2);
-        }
-
-        /* Holographic Interface */
-        .holo-interface {
-            position: relative;
-            width: 100%;
-            height: 600px;
-            perspective: 2000px;
-        }
-
-        .holo-container {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            transform-style: preserve-3d;
-            animation: anti-gravity 12s ease-in-out infinite;
-        }
-
-        @keyframes anti-gravity {
-            0%, 100% { transform: translateY(0) rotateX(5deg) rotateY(5deg) rotateZ(0); }
-            25% { transform: translateY(-40px) rotateX(8deg) rotateY(8deg) rotateZ(2deg); }
-            50% { transform: translateY(0) rotateX(5deg) rotateY(-5deg) rotateZ(0); }
-            75% { transform: translateY(-40px) rotateX(-8deg) rotateY(-8deg) rotateZ(-2deg); }
-        }
-
-        .holo-grid {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: 
-                linear-gradient(rgba(0, 247, 255, 0.15) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 247, 255, 0.15) 1px, transparent 1px);
-            background-size: 40px 40px;
-            border-radius: var(--singularity);
-            border: 1px solid rgba(0, 247, 255, 0.4);
-            box-shadow: var(--anti-gravity);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-
-        .holo-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 85%;
-            height: 85%;
-            background: rgba(5, 5, 16, 0.6);
-            border-radius: calc(var(--singularity) - 10px);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 40px;
-            text-align: center;
-            border: 1px solid rgba(0, 247, 255, 0.2);
-        }
-
-        /* Quantum Tool Matrix */
-        .tool-matrix {
-            padding: 150px 0;
-            position: relative;
-        }
-
-        .matrix-header {
-            text-align: center;
-            margin-bottom: 100px;
-        }
-
-        .matrix-header h2 {
-            font-family: 'Cosmos', sans-serif;
-            font-size: 4rem;
-            margin-bottom: 30px;
-            background: linear-gradient(135deg, var(--quantum-plasma), var(--supernova));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .matrix-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 40px;
-            max-width: 1600px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
-
-        .matrix-card {
-            background: rgba(5, 5, 16, 0.7);
-            border-radius: var(--singularity);
-            padding: 50px 40px;
-            position: relative;
-            overflow: hidden;
-            transition: var(--warp-factor);
-            border: 1px solid rgba(125, 18, 255, 0.3);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .matrix-card::before {
+        .hero::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(
-                135deg,
-                rgba(125, 18, 255, 0.1) 0%,
-                rgba(0, 247, 255, 0.1) 100%
-            );
-            z-index: -1;
-            opacity: 0;
-            transition: var(--warp-factor);
+            background: radial-gradient(circle at center, rgba(0, 245, 255, 0.1) 0%, transparent 70%);
+            pointer-events: none;
         }
 
-        .matrix-card:hover {
-            transform: translateY(-15px);
-            box-shadow: var(--anti-gravity);
-            border-color: rgba(0, 247, 255, 0.6);
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+            position: relative;
+            z-index: 2;
         }
 
-        .matrix-card:hover::before {
-            opacity: 1;
-            animation: quantum-pulse 6s infinite linear;
+        .hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, var(--quantum-blue), var(--hologram-teal));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
+            letter-spacing: 3px;
+            line-height: 1.2;
         }
 
-        @keyframes quantum-pulse {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            color: var(--matrix-green);
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.2);
         }
 
-        .card-orb {
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, var(--quantum-plasma), var(--supernova));
-            border-radius: 50%;
+        .cta-buttons {
             display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .btn {
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 40px;
-            font-size: 40px;
-            color: var(--cosmic-void);
-            box-shadow: 0 0 40px rgba(0, 247, 255, 0.5);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .btn-primary {
+            background: linear-gradient(145deg, var(--quantum-blue), var(--hologram-teal));
+            color: var(--void-black);
+            box-shadow: 
+                0 5px 25px rgba(0, 245, 255, 0.4),
+                0 0 15px rgba(0, 245, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 
+                0 8px 30px rgba(0, 245, 255, 0.6),
+                0 0 20px rgba(0, 245, 255, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--quantum-blue);
+            border: 2px solid var(--quantum-blue);
+            box-shadow: 0 0 15px rgba(0, 245, 255, 0.3);
+        }
+
+        .btn-outline:hover {
+            background: rgba(0, 245, 255, 0.1);
+            color: var(--hologram-teal);
+            border-color: var(--hologram-teal);
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.4);
+        }
+
+        .btn i {
+            margin-right: 10px;
+        }
+
+        /* Floating Holographic Elements */
+        .holographic-circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.15;
+            z-index: -1;
+        }
+
+        .circle-1 {
+            width: 500px;
+            height: 500px;
+            background: var(--quantum-blue);
+            top: -200px;
+            right: -200px;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .circle-2 {
+            width: 400px;
+            height: 400px;
+            background: var(--cyber-pink);
+            bottom: -150px;
+            left: -150px;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-50px) translateX(20px); }
+        }
+
+        /* Tools Section */
+        .tools-section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--hologram-teal);
+            text-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: var(--quantum-blue);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        .tool-card {
+            background: rgba(18, 18, 32, 0.7);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: 
+                0 5px 25px rgba(0, 0, 0, 0.4),
+                inset 0 0 20px rgba(0, 245, 255, 0.1);
+            transition: var(--transition);
+            border: 1px solid rgba(157, 0, 255, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 
+                0 10px 35px rgba(0, 0, 0, 0.5),
+                inset 0 0 25px rgba(0, 245, 255, 0.2);
+            border-color: var(--cyber-pink);
+        }
+
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, var(--quantum-blue), var(--cyber-pink));
+        }
+
+        .tool-icon {
+            padding: 2.5rem;
+            text-align: center;
+            font-size: 3.5rem;
+            color: var(--quantum-blue);
+            background: rgba(0, 0, 0, 0.2);
             position: relative;
             overflow: hidden;
         }
 
-        .card-orb::before {
+        .tool-icon i {
+            position: relative;
+            z-index: 2;
+            filter: drop-shadow(0 0 10px currentColor);
+        }
+
+        .tool-icon::after {
             content: '';
             position: absolute;
-            inset: 0;
-            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 70%);
-            opacity: 0;
-            transition: var(--warp-factor);
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(255, 255, 255, 0) 45%,
+                rgba(255, 255, 255, 0.1) 50%,
+                rgba(255, 255, 255, 0) 55%
+            );
+            transform: rotate(30deg);
+            animation: shine 3s infinite;
         }
 
-        .matrix-card:hover .card-orb::before {
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(30deg); }
+            100% { transform: translateX(100%) rotate(30deg); }
+        }
+
+        .tool-content {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .tool-content h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--hologram-teal);
+            letter-spacing: 1px;
+        }
+
+        .tool-content p {
+            color: var(--quantum-blue);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .tool-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.8rem 2rem;
+            background: linear-gradient(to right, var(--quantum-blue), var(--hologram-teal));
+            color: var(--void-black);
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(0, 245, 255, 0.3);
+        }
+
+        .tool-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(0, 245, 255, 0.5);
+        }
+
+        .tool-btn i {
+            margin-left: 8px;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 6rem 0;
+            background: radial-gradient(circle at center, rgba(18, 18, 32, 0.9), var(--void-black));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .features-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 4rem;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .features-image {
+            position: relative;
+        }
+
+        .features-image img {
+            max-width: 100%;
+            border-radius: var(--border-radius-lg);
+            box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.6),
+                0 0 30px rgba(0, 245, 255, 0.3);
+            border: 1px solid rgba(0, 245, 255, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+
+        .features-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            border: 2px solid var(--cyber-pink);
+            border-radius: var(--border-radius-lg);
             opacity: 0.3;
-            animation: orb-glow 2s infinite alternate;
+            z-index: 1;
+            animation: pulse 6s ease infinite;
         }
 
-        @keyframes orb-glow {
-            0% { transform: scale(0.8); opacity: 0.3; }
-            100% { transform: scale(1.2); opacity: 0.6; }
+        .features-list {
+            display: grid;
+            gap: 2rem;
         }
 
-        /* Responsive Stargate */
-        @media (max-width: 1280px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 60px;
-            }
-
-            .hero-text {
-                margin-bottom: 60px;
-            }
-
-            .hero-text h1 {
-                font-size: 4rem;
-            }
-
-            .holo-interface {
-                height: 500px;
-                max-width: 700px;
-                margin: 0 auto;
-            }
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            background: rgba(18, 18, 32, 0.7);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(0, 245, 255, 0.1);
+            transition: var(--transition);
         }
 
-        @media (max-width: 768px) {
-            .portal {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .hero-text h1 {
-                font-size: 3rem;
-            }
-
-            .matrix-header h2 {
-                font-size: 3rem;
-            }
-
-            .matrix-grid {
-                grid-template-columns: 1fr;
-            }
+        .feature-item:hover {
+            border-color: var(--cyber-pink);
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(255, 0, 170, 0.2);
         }
 
-        @media (max-width: 480px) {
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-text p {
-                font-size: 1.2rem;
-            }
-
-            .quantum-btn {
-                padding: 16px 32px;
-            }
+        .feature-icon {
+            background: linear-gradient(145deg, var(--quantum-blue), var(--hologram-teal));
+            color: var(--void-black);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            box-shadow: 0 0 15px rgba(0, 245, 255, 0.4);
         }
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
-    <!-- Stargate Navigation -->
-    <nav class="stargate" id="stargate">
-        <div class="portal">
-            <a href="/" class="cosmic-logo">QuantumTools</a>
-            <div class="nav-portal">
-                <a href="/tools" class="quantum-btn">
-                    <span class="btn-text">Explore Tools</span>
-                </a>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Quantum Hero Section -->
-    <section class="quantum-hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>Defy Gravity with Quantum Processing</h1>
-                <p>Experience zero-latency file transformation powered by quantum entanglement and neural networks.</p>
-                <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-                    <a href="/signup" class="quantum-btn">
-                        <span class="btn-text">Begin Quantum Journey</span>
-                    </a>
-                    <a href="/demo" class="quantum-btn">
-                        <span class="btn-text">Warp Speed Demo</span>
-                    </a>
-                </div>
-            </div>
-            <div class="holo-interface">
-                <div class="holo-container">
-                    <div class="holo-grid"></div>
-                    <div class="holo-content">
-                        <h3 style="font-size: 2.5rem; margin-bottom: 30px; background: linear-gradient(135deg, var(--quantum-plasma), var(--starlight)); -webkit-background-clip: text; background-clip: text; color: transparent;">Quantum Interface Online</h3>
-                        <p style="font-size: 1.2rem; margin-bottom: 40px; color: rgba(255,255,255,0.8);">Ready to process at 99.9% light speed efficiency</p>
-                        <div style="width: 100%; height: 4px; background: linear-gradient(90deg, var(--quantum-plasma), var(--supernova)); border-radius: 2px; margin-bottom: 30px;"></div>
-                        <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
-                            <div style="text-align: center;">
-                                <div style="font-size: 2.5rem; font-weight: 700; background: linear-gradient(135deg, var(--quantum-plasma), var(--starlight)); -webkit-background-clip: text; background-clip: text; color: transparent;">12.7x</div>
-                                <div style="font-size: 0.9rem; color: rgba(255,255,255,0.6);">Faster Processing</div>
-                            </div>
-                            <div style="text-align: center;">
-                                <div style="font-size: 2.5rem; font-weight: 700; background: linear-gradient(135deg, var(--quantum-plasma), var(--starlight)); -webkit-background-clip: text; background-clip: text; color: transparent;">0ms</div>
-                                <div style="font-size: 0.9rem; color: rgba(255,255,255,0.6);">Latency</div>
-                            </div>
-                            <div style="text-align: center;">
-                                <div style="font-size: 2.5rem; font-weight: 700; background: linear-gradient(135deg, var(--quantum-plasma), var(--starlight)); -webkit-background-clip: text; background-clip: text; color: transparent;">∞</div>
-                                <div style="font-size: 0.9rem; color: rgba(255,255,255,0.6);">Possibilities</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        .feature-text h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--hologram-teal);
+            letter-spacing: 1px;
+        }
 
-    <!-- Tool Matrix Section -->
-    <section class="tool-matrix">
-        <div class="matrix-header">
-            <h2>Quantum Tool Matrix</h2>
-            <p style="max-width: 800px; margin: 0 auto; font-size: 1.3rem; color: rgba(255,255,255,0.7);">Access our multidimensional toolkit through the quantum gateway</p>
-        </div>
-        <div class="matrix-grid">
-            <!-- Tool 1 -->
-            <div class="matrix-card">
-                <div class="card-orb">
-                    <i class="fas fa-atom"></i>
-                </div>
-                <h3 style="font-size: 1.8rem; margin-bottom: 20px; text-align: center;">Quantum Compressor</h3>
-                <p style="color: rgba(255,255,255,0.7); margin-bottom: 30px; text-align: center;">Reduce files beyond classical limits using quantum superposition algorithms</p>
-                <div style="text-align: center;">
-                    <a href="#" class="quantum-btn" style="display: inline-flex;">
-                        <span class="btn-text">Activate</span>
-                    </a>
-                </div>
-            </div>
+        .feature-text p {
+            color: var(--quantum-blue);
+            font-size: 1.1rem;
+        }
 
-            <!-- Tool 2 -->
-            <div class="matrix-card">
-                <div class="card-orb">
-                    <i class="fas fa-infinity"></i>
-                </div>
-                <h3 style="font-size: 1.8rem; margin-bottom: 20px; text-align: center;">Neural Enhancer</h3>
-                <p style="color: rgba(255,255,255,0.7); margin-bottom: 30px; text-align: center;">Transform low-quality files into perfect specimens with AI neural networks</p>
-                <div style="text-align: center;">
-                    <a href="#" class="quantum-btn" style="display: inline-flex;">
-                        <span class="btn-text">Activate</span>
-                    </a>
-                </div>
-            </div>
+        /* Stats Section */
+        .stats-section {
+            padding: 6rem 0;
+            background: linear-gradient(145deg, var(--void-black), var(--dark-space));
+            text-align: center;
+            position: relative;
+        }
 
-            <!-- Tool 3 -->
-            <div class="matrix-card">
-                <div class="card-orb">
-                    <i class="fas fa-tachometer-alt"></i>
-                </div>
-                <h3 style="font-size: 1.8rem; margin-bottom: 20px; text-align: center;">Light Speed Converter</h3>
-                <p style="color: rgba(255,255,255,0.7); margin-bottom: 30px; text-align: center;">Instant conversion between 200+ file formats at relativistic speeds</p>
-                <div style="text-align: center;">
-                    <a href="#" class="quantum-btn" style="display: inline-flex;">
-                        <span class="btn-text">Activate</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(90deg, transparent 48%, var(--cyber-pink) 49%, var(--cyber-pink) 51%, transparent 52%),
+                linear-gradient(transparent 48%, var(--cyber-pink) 49%, var(--cyber-pink) 51%, transparent 52%);
+            background-size: 40px 40px;
+            opacity: 0.05;
+            pointer-events: none;
+        }
 
-    <script>
-        // Stargate Navigation Effect
-        const stargate = document.getElementById('stargate');
-        let lastScroll = 0;
-        
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            if (currentScroll <= 0) {
-                stargate.classList.remove('hidden');
-                return;
-            }
-            
-            if (currentScroll > lastScroll && !stargate.classList.contains('hidden')) {
-                stargate.classList.add('hidden');
-            } else if (currentScroll < lastScroll && stargate.classList.contains('hidden')) {
-                stargate.classList.remove('hidden');
-            }
-            lastScroll = currentScroll;
-        });
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            padding: 0 30px;
+            position: relative;
+            z-index: 2;
+        }
 
-        // Q
+        .stat-item {
+            padding: 2.5rem 1.5rem;
+            background: rgba(18, 18, 32, 0.7);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid rgba(0, 245, 255, 0.2);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            border-color: var(--cyber-pink);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(255, 0, 170, 0.3);
+        }
+
+        .stat-number {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, var(--quantum-blue), var(--cyber-yellow));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--quantum-blue);
+            letter-spacing: 1px;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 3rem auto 0;
+            padding: 0 30px;
+        }
+
+        .testimonial-card {
+            background: rgba(18, 18, 32, 0.7);
+            padding: 2.5rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: 
+                0 5px 25px rgba(0, 0, 0, 0.4),
+                inset 0 0 20px rgba(0, 245, 255, 0.1);
+            border: 1px solid rgba(157, 0, 255, 0.3);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 
+                0 10px 35px rgba(0, 0, 0, 0.5),
+                inset 0 0 25px rgba(0, 245, 255, 0.2);
+            border-color: var(--cyber-pink);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 6rem;
+            color: rgba(0, 245, 255, 0.1);
+            font-family: serif;
+            line-height: 1;
+            z-index: 1;
+        }
+
+        .testimonial-content {
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+            font-size: 1.1rem;
+            color: var(--quantum-blue);
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--quantum-blue);
+            box-shadow: 0 0 15px rgba(0, 245, 255, 0.3);
+        }
+
+        .author-info h4 {
+            f
