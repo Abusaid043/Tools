@@ -3,307 +3,313 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyberFileX | Next-Gen File Processing</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_ID" crossorigin="anonymous"></script>
+    <title>NovaTools | Zero-Gravity Interface</title>
     <style>
+        /* Interstellar Design System */
         :root {
-            --neon-blue: #0ff0fc;
-            --neon-pink: #ff2a6d;
-            --neon-purple: #d300c5;
-            --matrix-green: #00ff41;
-            --cyber-yellow: #f9f002;
-            --void-black: #02010a;
-            --dark-space: #0d0221;
-            --deep-space: #1a0933;
-            --hologram-teal: #05f4b7;
-            --shadow-sm: 0 1px 3px rgba(0, 255, 65, 0.2);
-            --shadow-md: 0 4px 20px rgba(15, 240, 252, 0.3);
-            --shadow-lg: 0 10px 30px rgba(255, 42, 109, 0.4);
-            --border-radius: 8px;
-            --border-radius-lg: 16px;
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            --glow: 0 0 15px currentColor;
+            --cosmic-void: #050510;
+            --nebula-core: #7d12ff;
+            --quantum-plasma: #00f7ff;
+            --supernova: #ff2d7a;
+            --starlight: rgba(255, 255, 255, 0.92);
+            --dark-matter: rgba(5, 5, 16, 0.95);
+            --event-horizon: rgba(125, 18, 255, 0.3);
+            --singularity: 24px;
+            --warp-factor: all 0.6s cubic-bezier(0.25, 1, 0.5, 1.25);
+            --anti-gravity: 0 20px 60px rgba(0, 247, 255, 0.25);
         }
 
+        /* Zero-G Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        @font-face {
+            font-family: 'Cosmos';
+            src: url('https://fonts.cdnfonts.com/css/astro-space') format('woff2');
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Quantum';
+            src: url('https://fonts.cdnfonts.com/css/quantum') format('woff2');
+            font-display: swap;
         }
 
         body {
-            font-family: 'Rajdhani', sans-serif;
-            background-color: var(--void-black);
-            color: var(--neon-blue);
-            line-height: 1.6;
+            font-family: 'Quantum', sans-serif;
+            background-color: var(--cosmic-void);
+            color: var(--starlight);
+            line-height: 1.8;
             overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 20% 30%, rgba(15, 240, 252, 0.03) 0%, transparent 25%),
-                radial-gradient(circle at 80% 70%, rgba(255, 42, 109, 0.03) 0%, transparent 25%);
+            background-image:
+                radial-gradient(circle at 15% 30%, var(--nebula-core) 0%, transparent 30%),
+                radial-gradient(circle at 85% 70%, var(--quantum-plasma) 0%, transparent 30%),
+                linear-gradient(to bottom, transparent 0%, var(--cosmic-void) 100%);
+            background-attachment: fixed;
         }
 
-        /* Cyber Grid Background */
-        .cyber-grid {
+        /* Wormhole Navigation */
+        .stargate {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            background: 
-                linear-gradient(90deg, var(--dark-space) 21px, transparent 1%) center,
-                linear-gradient(var(--dark-space) 21px, transparent 1%) center,
-                var(--neon-purple);
-            background-size: 22px 22px;
-            opacity: 0.03;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        /* Holographic Header */
-        header {
-            background: linear-gradient(to bottom, rgba(13, 2, 33, 0.9), rgba(26, 9, 51, 0.7));
-            border-bottom: 1px solid var(--neon-purple);
-            padding: 1.5rem 0;
-            position: fixed;
-            width: 100%;
             z-index: 1000;
-            box-shadow: var(--shadow-lg);
-            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            background: var(--dark-matter);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--event-horizon);
+            transform: translateY(0);
+            transition: var(--warp-factor);
         }
 
-        .header-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 30px;
+        .stargate.hidden {
+            transform: translateY(-100%);
+        }
+
+        .portal {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 40px;
         }
 
-        .logo {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2rem;
-            font-weight: 900;
-            background: linear-gradient(to right, var(--neon-blue), var(--hologram-teal));
+        .cosmic-logo {
+            font-family: 'Cosmos', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--quantum-plasma), var(--supernova));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            text-shadow: 0 0 15px rgba(15, 240, 252, 0.4);
-            letter-spacing: 2px;
-        }
-
-        .logo span {
-            color: var(--neon-pink);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        nav ul li a {
-            color: var(--neon-blue);
             text-decoration: none;
-            font-weight: 600;
-            letter-spacing: 1px;
-            transition: var(--transition);
             position: relative;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.9rem;
+            padding: 0 10px;
         }
 
-        nav ul li a::after {
+        .cosmic-logo::before {
             content: '';
             position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--neon-pink);
-            transition: var(--transition);
+            inset: 0;
+            border: 2px solid transparent;
+            border-radius: 50px;
+            background: linear-gradient(135deg, var(--quantum-plasma), var(--supernova)) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            padding: 2px;
+            pointer-events: none;
+            opacity: 0;
+            transition: var(--warp-factor);
         }
 
-        nav ul li a:hover {
-            color: var(--neon-pink);
-            text-shadow: 0 0 10px var(--neon-pink);
+        .cosmic-logo:hover::before {
+            opacity: 1;
+            padding: 4px;
         }
 
-        nav ul li a:hover::after {
-            width: 100%;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
+        /* Quantum Buttons */
+        .quantum-btn {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 42px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--warp-factor);
+            overflow: hidden;
             border: none;
-            color: var(--neon-blue);
-            font-size: 1.5rem;
             cursor: pointer;
+            z-index: 1;
+            isolation: isolate;
         }
 
-        /* Cyber Hero Section */
-        .hero {
-            padding: 12rem 0 6rem;
-            text-align: center;
+        .quantum-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--quantum-plasma), var(--supernova));
+            z-index: -2;
+        }
+
+        .quantum-btn::after {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            background: var(--cosmic-void);
+            border-radius: 48px;
+            z-index: -1;
+            transition: var(--warp-factor);
+        }
+
+        .quantum-btn:hover::after {
+            background: transparent;
+            inset: 0;
+        }
+
+        .quantum-btn .btn-text {
+            background: linear-gradient(135deg, var(--quantum-plasma), var(--supernova));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            transition: var(--warp-factor);
+        }
+
+        .quantum-btn:hover .btn-text {
+            color: var(--cosmic-void);
+            background: transparent;
+            -webkit-background-clip: initial;
+            background-clip: initial;
+        }
+
+        /* Anti-Gravity Hero */
+        .quantum-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 180px 0 100px;
             position: relative;
             overflow: hidden;
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') center/cover;
-            opacity: 0.3;
-            z-index: -1;
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 1600px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
         }
 
-        .hero h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(to right, var(--neon-blue), var(--hologram-teal));
+        .hero-text h1 {
+            font-family: 'Cosmos', sans-serif;
+            font-size: 5rem;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, var(--starlight), var(--quantum-plasma));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            text-shadow: 0 0 20px rgba(15, 240, 252, 0.3);
-            letter-spacing: 3px;
+            text-shadow: 0 0 30px rgba(0, 247, 255, 0.4);
         }
 
-        .hero p {
-            font-size: 1.3rem;
-            color: var(--neon-blue);
-            margin-bottom: 2.5rem;
-            line-height: 1.8;
-            text-shadow: 0 0 10px rgba(15, 240, 252, 0.2);
+        .hero-text p {
+            font-size: 1.4rem;
+            margin-bottom: 50px;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            text-shadow: 0 0 10px rgba(0, 247, 255, 0.2);
         }
 
-        /* Cyber Button */
-        .btn {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: linear-gradient(145deg, var(--neon-blue), var(--hologram-teal));
-            color: var(--void-black);
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: var(--transition);
-            text-align: center;
-            box-shadow: 
-                0 5px 20px rgba(15, 240, 252, 0.5),
-                0 0 15px rgba(15, 240, 252, 0.3);
+        /* Holographic Interface */
+        .holo-interface {
             position: relative;
-            overflow: hidden;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-family: 'Orbitron', sans-serif;
-            text-decoration: none;
+            width: 100%;
+            height: 600px;
+            perspective: 2000px;
         }
 
-        .btn::before {
-            content: "";
+        .holo-container {
             position: absolute;
-            top: 0;
-            left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(
-                90deg,
-                transparent,
-                rgba(255, 255, 255, 0.2),
-                transparent
-            );
-            transition: var(--transition);
-        }
-
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 
-                0 8px 25px rgba(15, 240, 252, 0.7),
-                0 0 20px rgba(15, 240, 252, 0.5);
-        }
-
-        .btn:hover::before {
-            left: 100%;
-        }
-
-        .btn-accent {
-            background: linear-gradient(145deg, var(--neon-pink), #d1004f);
-            box-shadow: 
-                0 5px 20px rgba(255, 42, 109, 0.5),
-                0 0 15px rgba(255, 42, 109, 0.3);
-        }
-
-        .btn-accent:hover {
-            box-shadow: 
-                0 8px 25px rgba(255, 42, 109, 0.7),
-                0 0 20px rgba(255, 42, 109, 0.5);
-        }
-
-        /* Section Titles */
-        .section-title {
-            text-align: center;
-            margin: 5rem 0 3rem;
-            font-size: 2.5rem;
-            font-family: 'Orbitron', sans-serif;
-            color: var(--neon-blue);
-            text-shadow: 0 0 15px rgba(15, 240, 252, 0.3);
-            letter-spacing: 2px;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: "";
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background: linear-gradient(to right, var(--neon-blue), var(--neon-pink));
-            border-radius: 3px;
-        }
-
-        /* Tools Grid */
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 30px;
-        }
-
-        /* Holographic Tool Card */
-        .tool-card {
-            background: rgba(20, 0, 40, 0.7);
-            border-radius: var(--border-radius-lg);
-            overflow: hidden;
-            box-shadow: 
-                0 5px 25px rgba(0, 0, 0, 0.4),
-                inset 0 0 20px rgba(15, 240, 252, 0.2);
-            transition: var(--transition);
-            border: 1px solid var(--neon-purple);
-            position: relative;
             transform-style: preserve-3d;
+            animation: anti-gravity 12s ease-in-out infinite;
         }
 
-        .tool-card::before {
-            content: "";
+        @keyframes anti-gravity {
+            0%, 100% { transform: translateY(0) rotateX(5deg) rotateY(5deg) rotateZ(0); }
+            25% { transform: translateY(-40px) rotateX(8deg) rotateY(8deg) rotateZ(2deg); }
+            50% { transform: translateY(0) rotateX(5deg) rotateY(-5deg) rotateZ(0); }
+            75% { transform: translateY(-40px) rotateX(-8deg) rotateY(-8deg) rotateZ(-2deg); }
+        }
+
+        .holo-grid {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(rgba(0, 247, 255, 0.15) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 247, 255, 0.15) 1px, transparent 1px);
+            background-size: 40px 40px;
+            border-radius: var(--singularity);
+            border: 1px solid rgba(0, 247, 255, 0.4);
+            box-shadow: var(--anti-gravity);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .holo-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 85%;
+            height: 85%;
+            background: rgba(5, 5, 16, 0.6);
+            border-radius: calc(var(--singularity) - 10px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            text-align: center;
+            border: 1px solid rgba(0, 247, 255, 0.2);
+        }
+
+        /* Quantum Tool Matrix */
+        .tool-matrix {
+            padding: 150px 0;
+            position: relative;
+        }
+
+        .matrix-header {
+            text-align: center;
+            margin-bottom: 100px;
+        }
+
+        .matrix-header h2 {
+            font-family: 'Cosmos', sans-serif;
+            font-size: 4rem;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, var(--quantum-plasma), var(--supernova));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .matrix-card {
+            background: rgba(5, 5, 16, 0.7);
+            border-radius: var(--singularity);
+            padding: 50px 40px;
+            position: relative;
+            overflow: hidden;
+            transition: var(--warp-factor);
+            border: 1px solid rgba(125, 18, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .matrix-card::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
@@ -311,380 +317,248 @@
             height: 100%;
             background: linear-gradient(
                 135deg,
-                rgba(15, 240, 252, 0.1) 0%,
-                rgba(255, 42, 109, 0.1) 100%
+                rgba(125, 18, 255, 0.1) 0%,
+                rgba(0, 247, 255, 0.1) 100%
             );
             z-index: -1;
+            opacity: 0;
+            transition: var(--warp-factor);
         }
 
-        .tool-card:hover {
-            transform: translateY(-10px) rotateX(5deg);
-            box-shadow: 
-                0 15px 35px rgba(0, 0, 0, 0.6),
-                inset 0 0 30px rgba(15, 240, 252, 0.3);
-            border-color: var(--neon-blue);
+        .matrix-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--anti-gravity);
+            border-color: rgba(0, 247, 255, 0.6);
         }
 
-        .tool-img-container {
-            height: 220px;
-            overflow: hidden;
-            position: relative;
+        .matrix-card:hover::before {
+            opacity: 1;
+            animation: quantum-pulse 6s infinite linear;
         }
 
-        .tool-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
+        @keyframes quantum-pulse {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
-        .tool-card:hover .tool-img {
-            transform: scale(1.05);
-        }
-
-        .tool-content {
-            padding: 2rem;
-        }
-
-        .tool-tag {
-            display: inline-block;
-            padding: 0.4rem 1rem;
-            background: rgba(15, 240, 252, 0.1);
-            color: var(--neon-blue);
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            font-family: 'Orbitron', sans-serif;
-            letter-spacing: 1px;
-            border: 1px solid var(--neon-blue);
-        }
-
-        .tool-content h3 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--hologram-teal);
-            letter-spacing: 1px;
-        }
-
-        .tool-content p {
-            color: var(--neon-blue);
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-
-        /* Features Section */
-        .features {
-            background: rgba(13, 2, 33, 0.7);
-            padding: 6rem 0;
-            margin-top: 5rem;
-            border-top: 1px solid rgba(15, 240, 252, 0.1);
-            border-bottom: 1px solid rgba(15, 240, 252, 0.1);
-            position: relative;
-        }
-
-        .features::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                linear-gradient(90deg, transparent 48%, var(--neon-pink) 49%, var(--neon-pink) 51%, transparent 52%),
-                linear-gradient(transparent 48%, var(--neon-pink) 49%, var(--neon-pink) 51%, transparent 52%);
-            background-size: 40px 40px;
-            opacity: 0.05;
-            pointer-events: none;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 30px;
-        }
-
-        .feature-card {
-            background: rgba(25, 0, 51, 0.6);
-            border-radius: var(--border-radius-lg);
-            padding: 2.5rem;
-            text-align: center;
-            transition: var(--transition);
-            border: 1px solid rgba(15, 240, 252, 0.2);
-            backdrop-filter: blur(5px);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 
-                0 10px 30px rgba(15, 240, 252, 0.2),
-                inset 0 0 20px rgba(15, 240, 252, 0.1);
-            border-color: var(--neon-blue);
-        }
-
-        .feature-icon {
-            font-size: 3.5rem;
-            color: var(--neon-blue);
-            margin-bottom: 1.5rem;
-            transition: var(--transition);
-        }
-
-        .feature-card:hover .feature-icon {
-            transform: scale(1.2);
-            color: var(--hologram-teal);
-        }
-
-        .feature-card h3 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: var(--neon-blue);
-            letter-spacing: 1px;
-        }
-
-        .feature-card p {
-            color: var(--neon-blue);
-            opacity: 0.9;
-            line-height: 1.7;
-        }
-
-        /* CTA Section */
-        .cta {
-            background: linear-gradient(135deg, var(--dark-space), var(--deep-space));
-            padding: 8rem 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(15, 240, 252, 0.1) 0%, transparent 30%),
-                radial-gradient(circle at 80% 70%, rgba(255, 42, 109, 0.1) 0%, transparent 30%);
-            pointer-events: none;
-        }
-
-        .cta-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .cta h2 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.8rem;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(to right, var(--neon-blue), var(--hologram-teal));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 0 0 20px rgba(15, 240, 252, 0.3);
-            letter-spacing: 2px;
-        }
-
-        .cta p {
-            font-size: 1.3rem;
-            color: var(--neon-blue);
-            margin-bottom: 2.5rem;
-            line-height: 1.8;
-        }
-
-        /* Footer */
-        footer {
-            background: linear-gradient(to top, var(--void-black), var(--deep-space));
-            color: var(--neon-blue);
-            padding: 5rem 0 3rem;
-            position: relative;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 30px;
-        }
-
-        .footer-section h3 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--hologram-teal);
-            letter-spacing: 1px;
-        }
-
-        .footer-section p {
-            color: var(--neon-blue);
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            margin-bottom: 1rem;
-        }
-
-        .footer-section ul li a {
-            color: var(--neon-blue);
-            text-decoration: none;
-            transition: var(--transition);
-            display: inline-block;
-            font-family: 'Rajdhani', sans-serif;
-            font-weight: 500;
-            letter-spacing: 1px;
-        }
-
-        .footer-section ul li a:hover {
-            color: var(--hologram-teal);
-            transform: translateX(5px);
-            text-shadow: 0 0 8px var(--hologram-teal);
-        }
-
-        .social-links {
+        .card-orb {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--quantum-plasma), var(--supernova));
+            border-radius: 50%;
             display: flex;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 40px;
+            font-size: 40px;
+            color: var(--cosmic-void);
+            box-shadow: 0 0 40px rgba(0, 247, 255, 0.5);
+            position: relative;
+            overflow: hidden;
         }
 
-        .social-links a {
-            color: var(--neon-blue);
-            font-size: 1.5rem;
-            transition: var(--transition);
+        .card-orb::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 70%);
+            opacity: 0;
+            transition: var(--warp-factor);
         }
 
-        .social-links a:hover {
-            color: var(--neon-pink);
-            transform: translateY(-5px);
+        .matrix-card:hover .card-orb::before {
+            opacity: 0.3;
+            animation: orb-glow 2s infinite alternate;
         }
 
-        .copyright {
-            text-align: center;
-            margin-top: 4rem;
-            padding-top: 3rem;
-            border-top: 1px solid rgba(15, 240, 252, 0.1);
-            color: var(--neon-blue);
-            font-size: 0.9rem;
+        @keyframes orb-glow {
+            0% { transform: scale(0.8); opacity: 0.3; }
+            100% { transform: scale(1.2); opacity: 0.6; }
         }
 
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 2.8rem;
+        /* Responsive Stargate */
+        @media (max-width: 1280px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 60px;
             }
-            
-            .section-title {
-                font-size: 2.2rem;
+
+            .hero-text {
+                margin-bottom: 60px;
             }
-            
-            .tools-grid {
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+            .hero-text h1 {
+                font-size: 4rem;
+            }
+
+            .holo-interface {
+                height: 500px;
+                max-width: 700px;
+                margin: 0 auto;
             }
         }
 
         @media (max-width: 768px) {
-            nav ul {
-                display: none;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background: var(--deep-space);
+            .portal {
                 flex-direction: column;
-                align-items: center;
-                padding: 2rem 0;
-                box-shadow: var(--shadow-md);
-                z-index: 999;
+                gap: 20px;
             }
 
-            nav ul.show {
-                display: flex;
+            .hero-text h1 {
+                font-size: 3rem;
             }
 
-            .mobile-menu-btn {
-                display: block;
+            .matrix-header h2 {
+                font-size: 3rem;
             }
 
-            .hero {
-                padding: 10rem 0 5rem;
-            }
-
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .cta h2 {
-                font-size: 2.2rem;
+            .matrix-grid {
+                grid-template-columns: 1fr;
             }
         }
 
-        @media (max-width: 576px) {
-            .logo {
-                font-size: 1.5rem;
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 2.5rem;
             }
 
-            .hero h1 {
-                font-size: 1.8rem;
+            .hero-text p {
+                font-size: 1.2rem;
             }
 
-            .section-title {
-                font-size: 1.8rem;
-            }
-
-            .tools-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .btn {
-                padding: 0.8rem 1.8rem;
-                font-size: 1rem;
+            .quantum-btn {
+                padding: 16px 32px;
             }
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Cyber Grid Background -->
-    <div class="cyber-grid"></div>
-
-    <!-- Header -->
-    <header>
-        <div class="header-content">
-            <a href="#" class="logo">Cyber<span>FileX</span></a>
-            <nav>
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <ul id="navMenu">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#image-tools">Image Tools</a></li>
-                    <li><a href="#pdf-tools">PDF Tools</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+    <!-- Stargate Navigation -->
+    <nav class="stargate" id="stargate">
+        <div class="portal">
+            <a href="/" class="cosmic-logo">QuantumTools</a>
+            <div class="nav-portal">
+                <a href="/tools" class="quantum-btn">
+                    <span class="btn-text">Explore Tools</span>
+                </a>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Quantum Hero Section -->
+    <section class="quantum-hero">
         <div class="hero-content">
-            <h1>TRANSFORM YOUR FILES IN THE CYBER AGE</h
+            <div class="hero-text">
+                <h1>Defy Gravity with Quantum Processing</h1>
+                <p>Experience zero-latency file transformation powered by quantum entanglement and neural networks.</p>
+                <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                    <a href="/signup" class="quantum-btn">
+                        <span class="btn-text">Begin Quantum Journey</span>
+                    </a>
+                    <a href="/demo" class="quantum-btn">
+                        <span class="btn-text">Warp Speed Demo</span>
+                    </a>
+                </div>
+            </div>
+            <div class="holo-interface">
+                <div class="holo-container">
+                    <div class="holo-grid"></div>
+                    <div class="holo-content">
+                        <h3 style="font-size: 2.5rem; margin-bottom: 30px; background: linear-gradient(135deg, var(--quantum-plasma), var(--starlight)); -webkit-background-clip: text; background-clip: text; color: transparent;">Quantum Interface Online</h3>
+                        <p style="font-size: 1.2rem; margin-bottom: 40px; color: rgba(255,255,255,0.8);">Ready to process at 99.9% light speed efficiency</p>
+                        <div style="width: 100%; height: 4px; background: linear-gradient(90deg, var(--quantum-plasma), var(--supernova)); border-radius: 2px; margin-bottom: 30px;"></div>
+                        <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+                            <div style="text-align: center;">
+                                <div style="font-size: 2.5rem; font-weight: 700; background: linear-gradient(135deg, var(--quantum-plasma), var(--starlight)); -webkit-background-clip: text; background-clip: text; color: transparent;">12.7x</div>
+                                <div style="font-size: 0.9rem; color: rgba(255,255,255,0.6);">Faster Processing</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 2.5rem; font-weight: 700; background: linear-gradient(135deg, var(--quantum-plasma), var(--starlight)); -webkit-background-clip: text; background-clip: text; color: transparent;">0ms</div>
+                                <div style="font-size: 0.9rem; color: rgba(255,255,255,0.6);">Latency</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 2.5rem; font-weight: 700; background: linear-gradient(135deg, var(--quantum-plasma), var(--starlight)); -webkit-background-clip: text; background-clip: text; color: transparent;">∞</div>
+                                <div style="font-size: 0.9rem; color: rgba(255,255,255,0.6);">Possibilities</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tool Matrix Section -->
+    <section class="tool-matrix">
+        <div class="matrix-header">
+            <h2>Quantum Tool Matrix</h2>
+            <p style="max-width: 800px; margin: 0 auto; font-size: 1.3rem; color: rgba(255,255,255,0.7);">Access our multidimensional toolkit through the quantum gateway</p>
+        </div>
+        <div class="matrix-grid">
+            <!-- Tool 1 -->
+            <div class="matrix-card">
+                <div class="card-orb">
+                    <i class="fas fa-atom"></i>
+                </div>
+                <h3 style="font-size: 1.8rem; margin-bottom: 20px; text-align: center;">Quantum Compressor</h3>
+                <p style="color: rgba(255,255,255,0.7); margin-bottom: 30px; text-align: center;">Reduce files beyond classical limits using quantum superposition algorithms</p>
+                <div style="text-align: center;">
+                    <a href="#" class="quantum-btn" style="display: inline-flex;">
+                        <span class="btn-text">Activate</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tool 2 -->
+            <div class="matrix-card">
+                <div class="card-orb">
+                    <i class="fas fa-infinity"></i>
+                </div>
+                <h3 style="font-size: 1.8rem; margin-bottom: 20px; text-align: center;">Neural Enhancer</h3>
+                <p style="color: rgba(255,255,255,0.7); margin-bottom: 30px; text-align: center;">Transform low-quality files into perfect specimens with AI neural networks</p>
+                <div style="text-align: center;">
+                    <a href="#" class="quantum-btn" style="display: inline-flex;">
+                        <span class="btn-text">Activate</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tool 3 -->
+            <div class="matrix-card">
+                <div class="card-orb">
+                    <i class="fas fa-tachometer-alt"></i>
+                </div>
+                <h3 style="font-size: 1.8rem; margin-bottom: 20px; text-align: center;">Light Speed Converter</h3>
+                <p style="color: rgba(255,255,255,0.7); margin-bottom: 30px; text-align: center;">Instant conversion between 200+ file formats at relativistic speeds</p>
+                <div style="text-align: center;">
+                    <a href="#" class="quantum-btn" style="display: inline-flex;">
+                        <span class="btn-text">Activate</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Stargate Navigation Effect
+        const stargate = document.getElementById('stargate');
+        let lastScroll = 0;
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll <= 0) {
+                stargate.classList.remove('hidden');
+                return;
+            }
+            
+            if (currentScroll > lastScroll && !stargate.classList.contains('hidden')) {
+                stargate.classList.add('hidden');
+            } else if (currentScroll < lastScroll && stargate.classList.contains('hidden')) {
+                stargate.classList.remove('hidden');
+            }
+            lastScroll = currentScroll;
+        });
+
+        // Q
